@@ -18,15 +18,17 @@ public class TesteErro {
 		System.out.println("inicio do metodo2");
 		int[] array = new int[10];
 
-		try {
-			
-			for (int i = 0; i <= 15; i++) {
+		for (int i = 0; i <= 15; i++) {
+
+			try {
+
 				array[i] = i;
 				System.out.println(i);
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("Houve um acesso à um index inválido: " + i + ".");
 			}
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("Houve um acesso à um index inválido.");
 		}
+
 		System.out.println("fim do metodo2");
 	}
 }
