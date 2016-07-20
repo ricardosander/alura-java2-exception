@@ -10,7 +10,12 @@ public class TesteErro {
 
 	static void metodo1() {
 		System.out.println("inicio do metodo1");
-		metodo2();
+		try {
+			metodo2();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Houve um acesso à um index inválido.");
+		}
+
 		System.out.println("fim do metodo1");
 	}
 
@@ -20,13 +25,8 @@ public class TesteErro {
 
 		for (int i = 0; i <= 15; i++) {
 
-			try {
-
-				array[i] = i;
-				System.out.println(i);
-			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println("Houve um acesso à um index inválido: " + i + ".");
-			}
+			array[i] = i;
+			System.out.println(i);
 		}
 
 		System.out.println("fim do metodo2");
