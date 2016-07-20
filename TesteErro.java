@@ -4,17 +4,18 @@ public class TesteErro {
 
 	public static void main(String[] args) {
 		System.out.println("inicio do main");
-		metodo1();
+		try {
+			metodo1();
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Houve um acesso à um index inválido.");
+		}
+
 		System.out.println("fim do main");
 	}
 
 	static void metodo1() {
 		System.out.println("inicio do metodo1");
-		try {
-			metodo2();
-		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("Houve um acesso à um index inválido.");
-		}
+		metodo2();
 
 		System.out.println("fim do metodo1");
 	}
